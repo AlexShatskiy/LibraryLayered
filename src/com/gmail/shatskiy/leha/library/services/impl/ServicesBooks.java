@@ -29,10 +29,10 @@ public class ServicesBooks implements ServicesBooksInterface {
 
 		try {
 			list = bookDAO.loadBooks(request);
+		} catch (IllegalArgumentException | NullPointerException e) {
+			return response = "WRONG_REQUEST_services";
 		} catch (DAOException e) {
 			throw new ServicesException(e);
-		} catch (IllegalArgumentException | NullPointerException e) {
-			response = "WRONG_REQUEST_services";
 		}
 
 		Collections.sort(list, new BookNameComparator());

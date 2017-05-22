@@ -28,6 +28,8 @@ public class ViewBooks {
 			System.out.println(resp5);
 			String resp6 = controller.executeTask("getg Name_Autor_Type name3 autor1");
 			System.out.println(resp6);
+			String resp7 = controller.executeTask("get Autor1");
+			System.out.println(resp7);
 		} catch (ControllerException e) {
 	
 			e.printStackTrace();
