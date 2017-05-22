@@ -1,0 +1,8 @@
+name1<>autor1<>desc1<>FANTASY
+name3<>autor2<>desc3<>FANTASY
+name2<>autor1<>desc2<>SCIENCE
+name4<>autor2<>desc4<>SCIENCE
+name2<>autor3<>desc8<>FANTASY
+name7<>autor2<>desc7<>SCIENCE
+name5<>autor1<>desc5<>SCIENCE
+name6<>autor2<>desc6<>FANTASY
