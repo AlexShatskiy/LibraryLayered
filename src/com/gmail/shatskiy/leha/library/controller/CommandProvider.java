@@ -5,15 +5,17 @@ import java.util.Map;
 
 import com.gmail.shatskiy.leha.library.controller.command.Command;
 import com.gmail.shatskiy.leha.library.controller.command.CommandName;
-import com.gmail.shatskiy.leha.library.controller.command.impl.GetCommand;
-import com.gmail.shatskiy.leha.library.controller.command.impl.WrongCommand;
+import com.gmail.shatskiy.leha.library.controller.command.impl.*;
 
 final class CommandProvider {
 
 	private final Map<CommandName, Command> repository = new HashMap<>();
 
 	CommandProvider() {
-		repository.put(CommandName.GET, new GetCommand());
+		repository.put(CommandName.GET_AUTOR, new GetAutorCommand());
+		repository.put(CommandName.GET_NAME, new GetNameCommand());
+		repository.put(CommandName.GET_NAME_AUTOR, new GetNameAutorCommand());
+		repository.put(CommandName.GET_NAME_AUTOR_TYPE, new GetNameAutorTypeCommand());
 		repository.put(CommandName.WRONG_REQUEST, new WrongCommand());
 	}
 

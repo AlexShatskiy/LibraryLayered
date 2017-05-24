@@ -1,6 +1,6 @@
 package com.gmail.shatskiy.leha.library.controller.command;
 
-import com.gmail.shatskiy.leha.library.services.exception.ServicesException;
+import com.gmail.shatskiy.leha.library.service.exception.ServicesException;
 
 public interface Command {
 	
