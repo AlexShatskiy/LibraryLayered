@@ -1,5 +1,8 @@
 package com.gmail.shatskiy.leha.library.controller.command.impl;
 
+import java.util.ArrayList;
+
+import com.gmail.shatskiy.leha.library.beans.Book;
 import com.gmail.shatskiy.leha.library.controller.command.Command;
 import com.gmail.shatskiy.leha.library.service.ServicesBooksInterface;
 import com.gmail.shatskiy.leha.library.service.exception.ServicesException;
@@ -15,17 +18,19 @@ public class GetNameCommand implements Command {
 	public String execute(String request) throws ServicesException {
 		String response;
 		String name;
+		ArrayList<Book> list = null;
 		String[] massParam = request.split(PARAM_DELIMITER);
 
 		if (massParam.length < AMOUNT_PARAM) {
-			response = new WrongCommand().execute(request);
+			response = "WRONG_REQUEST";
 		} else {
 			name = request.split(PARAM_DELIMITER)[POSITION_NAME];
 
 			ServiceFactory serviceFactory = ServiceFactory.getInstance();
 			ServicesBooksInterface servicesBooks = serviceFactory.getServicesBooks();
 
-			response = servicesBooks.getBooksName(name);
+			list = servicesBooks.getBooksName(name);
+			response = FormattingList.formatting(list);
 		}
 
 		return response;

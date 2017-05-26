@@ -1,21 +1,20 @@
-package com.gmail.shatskiy.leha.library.service.impl;
+package com.gmail.shatskiy.leha.library.controller.command.impl;
 
-import java.util.Collections;
 import java.util.List;
 
 import com.gmail.shatskiy.leha.library.beans.Book;
 import com.gmail.shatskiy.leha.library.beans.FantasyBook;
 import com.gmail.shatskiy.leha.library.beans.ScienceBook;
 
-class FormattingList {
+final class FormattingList {
 	
+	private FormattingList() {}
+
 	public static String formatting (List<Book> list){
 		
 		String response;
 		
 		StringBuilder builder = new StringBuilder();
-		
-		Collections.sort(list, new BookNameComparator());
 
 		for (Book book : list) {
 			builder.append(book.getName() + " " + book.getAutor() + " " + book.getDescription() + " ");
